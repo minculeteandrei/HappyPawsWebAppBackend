@@ -1,5 +1,4 @@
 # HappyPawsWebApp
-HappyPaws is a Web Application for organizing the services in a veterinary office. The backend is made with Spring, while the Frontend is made with React
 
 How To Contribute
 PLEASE DON'T COMMIT DIRECTLY TO THE MASTER BRANCH!!!
