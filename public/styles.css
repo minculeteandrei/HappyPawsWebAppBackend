@@ -470,6 +470,40 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .absolute{
   position: absolute;
 }
@@ -490,6 +524,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px;
 }
 
+.top-5{
+  top: 1.25rem;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
 .mx-16{
   margin-left: 4rem;
   margin-right: 4rem;
@@ -497,6 +539,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex{
   display: flex;
+}
+
+.hidden{
+  display: none;
 }
 
 .h-full{
@@ -513,6 +559,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: fit-content;
 }
 
+.h-48{
+  height: 12rem;
+}
+
+.h-32{
+  height: 8rem;
+}
+
+.h-20{
+  height: 5rem;
+}
+
+.h-auto{
+  height: auto;
+}
+
 .w-full{
   width: 100%;
 }
@@ -521,6 +583,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-0\.5{
+  width: 0.125rem;
+}
+
+.w-0{
+  width: 0px;
+}
+
+.w-96{
+  width: 24rem;
 }
 
 .flex-grow{
@@ -547,8 +621,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.overflow-clip{
+  overflow: clip;
+}
+
+.overflow-visible{
+  overflow: visible;
+}
+
 .bg-primary{
   background-color: rgba(13, 186, 13, 0.69);
+}
+
+.bg-green-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-100{
