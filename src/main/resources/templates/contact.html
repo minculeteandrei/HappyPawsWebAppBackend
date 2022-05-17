@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.checked {
+  color: rgb(56, 81, 219);
+}
+
+/* Style the header */
+header {
+  background-color: rgb(36, 171, 26);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 20px;
+  height: 600px;
+  
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  padding: 10px;
+
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  background-color: #EBE1B7;
+  padding: 20px;
+  width: 400px;
+  font-size: 25px;
+}
+
+li {
+  
+  width: 300px;
+  border: 3px solid #EBE1B7;
+  padding: 5px;
+  margin: 20px;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #EBE1B7;
+  padding: 10px;
+}
+
+#ip1 {
+    border-radius: 18px;
+    background: rgb(183, 173, 173);
+    padding: 20px; 
+    width: 600px;
+    height: 15px; 
+    
+}
+
+
+.container{
+    width: 200px;
+    height: 200px;
+    background: #e3ebfe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+input[type=submit] {
+  background-color: #EBE1B7;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 470px;
+  cursor: pointer;
+  position: absolute;
+  
+}
+table, th, td {
+  
+  border-collapse: collapse;
+}
+th, td {
+  padding-left: 60px;
+  padding-right: 90px;
+}
+
+.vl {
+  border-left: 4px solid #EBE1B7;
+  height: 800px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <table style="width:100%">
+        <tr>
+            <th>Happy Paws</th>
+            <th>Galerie</th>
+            <th>Servicii</th>
+            <th>Programari</th>
+            <th><u>Contact</u></th>
+        </tr>
+    </table>
+  
+</header>
+
+<section>
+  
+  <nav>
+    <div class="grid-container">
+        <div>Contact</div>
+    </div>
+    <ul>
+      <li >Contact clinica veterinara:</li>
+      <li>Telefon: 0347 202 134</li>
+      <li>Email: animals@happypaws.ro</li>
+      <li>Adresa: Strada Drumul Sării 120b</li>
+      <li>Program: Non-Stop</li>
+    </ul>
+  </nav>
+  
+  <div class="vl"></div>
+
+  <article>
+     <table>
+        <tr>
+            <th>
+                <ul>
+                    <li>Nume: <input type="text"  id="ip2"/></li>
+                    <li>Email: <input type="text"  id="ip3"/></li>
+                    <li>Telefon: <input type="text"  id="ip4"/></li> 
+                </ul>
+            </th>
+            <th>
+                Recenzia dumneavoastra conteaza pentru noi
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </th>
+        </tr>
+     </table>
+     <div class="center">
+        <p align="center">Mesajul dumneavoastra:</p>
+        <input type="text"  id="ip1"/>
+      </div>
+
+      <input type="submit" value="Submit">
+      <br><br><br><br><br>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.3346938045343!2d26.058028915145744!3d44.42629631011353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b201d643d3130b%3A0xb02b5a4a8b2e46af!2sDrumul%20S%C4%83rii%20120b%2C%20Bucure%C8%99ti%20061344!5e0!3m2!1sro!2sro!4v1652736781860!5m2!1sro!2sro" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </article>
+
+</section>
+
+
+</body>
+</html>
+
