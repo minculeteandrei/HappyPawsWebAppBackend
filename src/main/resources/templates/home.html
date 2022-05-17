@@ -1,70 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <link rel="stylesheet" th:href="@{/public/css/styles.css}" type="text/css"/>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        .container img {
+            flex-shrink: 0;
+            min-width: 100%;
+            min-height: 100%;
+            margin-top: 0px;
+            height: 100%;
+        }
+        .heading {
+            font-family: 'Inria Sans', sans-serif;
+            top: 20%;
+            margin-left: 900px;
+            position: absolute;
+            font-size: 5rem;
+            color: white;
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="font-body font-semibold w-full text-white"><!-- content wrapper-->
-        <div class="bg-primary bg-opacity-100 w-full relative">
-            <nav>
-                <h1 class="text-5xl mx-16 pt-7 pb-7 text-black">
-                    <a href="/">Happy Paws</a>
-                </h1>
-                <div>
-                    <ul class="gird grid-cols-2 flex absolute top-0 right-20">
-                        <li>
-                            <a href="#">
-                                <span>Creeaza un cont de client</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Intra in cont</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <ul class="gird grid-cols-4 flex justify-end absolute right-0 top-10">
-                    <li>
-                        <a href="#">
-                            <span>Galerie</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Servicii</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Programari</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div><!-- end nav-->
-        
-        <div>
-            <main>
-                <div>
-                    <div class="bg-green-600 w-full h-screen">
-                        <img class="object-cover overflow-clip w-full h-full" src="../photos/dog_bg.png" alt="">
-                        <span class="absolute flex justify-center right-0">Cum se simte prietenul tau?</span>
-                    </div>
-                </div>
-
-            </main>
-        </div>
+    <div class="container">
+        <img src="../static/photos/dog_bg.png">
+        <h1 class="heading">Cum se simte prietenul tau?</h1>
     </div>
 </body>
 </html>
