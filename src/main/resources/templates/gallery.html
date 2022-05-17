@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+@import "public/css/nav.css";
 body {
   font-family: Arial;
   margin: 0;
@@ -126,20 +128,7 @@ header {
 
 </style>
 <body>
-
-    <header>
-        <table style="width:100%">
-            <tr>
-                <th>Happy Paws</th>
-                <th>Galerie</th>
-                <th>Servicii</th>
-                <th>Programari</th>
-                <th><u>Contact</u></th>
-            </tr>
-        </table>
-      
-    </header>
-
+<div th:replace="fragments/nav :: top"></div>
 <div class="subheader">
     <h1>Galerie</h1>
 </div>
@@ -147,32 +136,32 @@ header {
 <div class="container">
   <div class="mySlides fade">
     <div class="numbertext">1 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\dog1.jpg" style="width:100%">
+    <img src="photos\dog1.jpg" style="width:100%">
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\dog2.jpg" style="width:100%">
+    <img src="photos\dog2.jpg" style="width:100%">
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\cat2.jpg" style="width:100%">
+    <img src="photos\cat2.jpg" style="width:100%">
   </div>
     
   <div class="mySlides fade">
     <div class="numbertext">4 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\parrot1.jpg" style="width:100%">
+    <img src="photos\parrot1.jpg" style="width:100%">
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">5 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\rabbit1.jpg" style="width:100%">
+    <img src="photos\rabbit1.jpg" style="width:100%">
   </div>
     
   <div class="mySlides fade">
     <div class="numbertext">6 / 6</div>
-    <img src="D:\AAASubjects\WAD\proiect\photos\salmon1.jpg" style="width:100%">
+    <img src="photos\salmon1.jpg" style="width:100%">
   </div>
     
   <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -184,22 +173,22 @@ header {
 
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\dog1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Dog">
+      <img class="demo cursor" src="photos\dog1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Dog">
     </div>
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\dog2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dog">
+      <img class="demo cursor" src="photos\dog2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dog">
     </div>
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\cat2.jpg" style="width:100%" onclick="currentSlide(3)" alt="Cat">
+      <img class="demo cursor" src="photos\cat2.jpg" style="width:100%" onclick="currentSlide(3)" alt="Cat">
     </div>
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\parrot1.jpg" style="width:100%" onclick="currentSlide(4)" alt="Parrot">
+      <img class="demo cursor" src="photos\parrot1.jpg" style="width:100%" onclick="currentSlide(4)" alt="Parrot">
     </div>
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\rabbit1.jpg" style="width:100%" onclick="currentSlide(5)" alt="Rabbit">
+      <img class="demo cursor" src="photos\rabbit1.jpg" style="width:100%" onclick="currentSlide(5)" alt="Rabbit">
     </div>    
     <div class="column">
-      <img class="demo cursor" src="D:\AAASubjects\WAD\proiect\photos\salmon1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Salmon">
+      <img class="demo cursor" src="photos\salmon1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Salmon">
     </div>
   </div>
 </div>
@@ -234,6 +223,7 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
-    
+
+<div th:replace="fragments/footer :: bottom"></div>
 </body>
 </html>
