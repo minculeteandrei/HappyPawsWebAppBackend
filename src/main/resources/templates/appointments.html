@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .checked {
+      color: rgb(56, 81, 219);
+    }
+
+
+    /* Container for flexboxes */
+    section {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    /* Style the navigation menu */
+    nav {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 20px;
+      height: 600px;
+
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Style the content */
+    article {
+      -webkit-flex: 3;
+      -ms-flex: 3;
+      flex: 3;
+      padding: 10px;
+
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 10px;
+      background-color: #EBE1B7;
+      padding: 20px;
+      width: 400px;
+      font-size: 25px;
+    }
+
+    .below-header{
+      margin: 25px;
+    }
+
+    li {
+
+      width: 300px;
+      border: 3px solid #EBE1B7;
+      padding: 5px;
+      margin: 20px;
+    }
+
+    .center {
+      margin: auto;
+      width: 60%;
+      border: 3px solid #EBE1B7;
+      padding: 10px;
+    }
+
+    #ip1 {
+      border-radius: 18px;
+      background: rgb(183, 173, 173);
+      padding: 20px;
+      width: 600px;
+      height: 15px;
+
+    }
+
+    #id{
+
+    }
+
+    .container{
+      width: 200px;
+      height: 200px;
+      background: #e3ebfe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button{
+      width: 270px;
+      height: 80px;
+      border: none;
+      outline: none;
+      background: #2f2f2f;
+      color: #fff;
+      font-size: 22px;
+      border-radius: 40px;
+      text-align: center;
+      box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    input[type=submit] {
+      background-color: #EBE1B7;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 470px;
+      cursor: pointer;
+      position: absolute;
+
+    }
+    table, th, td {
+
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 60px;
+    }
+
+    .vl {
+      border-left: 4px solid #EBE1B7;
+      height: 800px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+      section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<section>
+
+  <nav>
+    <div class="grid-container">
+      <div>Programari</div>
+    </div>
+    <div class="below-header"> Pentru a eficientiza procesul de consultatie va rugam sa completati urmatoarele campuri:</div>
+
+    <table  style="width:100%">
+      <tr>
+        <th>Nume complet: <br><input type="text"  id="ip2"/></th>
+        <th>Numar de telefon: <br><input type="text"  id="ip3"/></th>
+      </tr>
+
+      <tr>
+        <br><br>
+        <th colspan="2" align="left">Adresa de email: <br><input type="text"  id="ip4"/></th>
+      </tr>
+    </table>
+  </nav>
+
+  <div class="vl"></div>
+
+  <article>
+    <p align="center">Alegeti o data pentru programare din cele disponibile: </p>
+
+    <label for="start">Start date:</label>
+
+    <input type="date" id="start" name="trip-start"
+           value="2021-07-22"
+           min="2022-01-01" max="2088-12-31">
+    <input type="submit" value="Submit">
+    <br><br><br><br><br>
+    <p align="center">Pentru mai multe detalii legate de programari accesati pagina 'Contact'</p>
+  </article>
+
+</section>
+
+
+</body>
+</html>

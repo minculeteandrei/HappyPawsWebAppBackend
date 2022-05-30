@@ -6,6 +6,8 @@
     <title>Services Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital@0;1&family=Inter&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.cs'>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <style>
     @import "public/css/nav.css";
@@ -30,8 +32,15 @@
             font-family: 'Inter', sans-serif;
         }
         .header {
-           background-color: #EBE1B7; 
+           background-color: #EBE1B7;
            margin-bottom: 0;
+        }
+
+        .clearfix::after {
+            content: " ";
+            display: block;
+            height: 0;
+            clear: both;
         }
         .left-col, .center-col, .right-col {
             width: 27%;
@@ -47,7 +56,7 @@
             margin-bottom: 20px;
             height: 60%;
         }
-        .container img {
+        .containerLocal img {
             width: 50%;
             margin:auto;
             display:block;
@@ -56,7 +65,7 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
-        button {
+        .buttonLocal {
             background-color: #4CAF50;
             color: white;
             border: 2px #4CAF50;
@@ -71,7 +80,7 @@
             margin-top: 30px;
         }
         button:hover {
-            background-color: white; 
+            background-color: white;
             color: #4CAF50;
             border: 1px solid #4CAF50;
         }
@@ -82,25 +91,25 @@
 <body>
 <div th:replace="fragments/nav :: top"></div>
 <div class="header">
-    <h1>Serviciile noastre</h1>
+    <h1>Serviciile</h1>
 </div>
 <div class="cover">
     <img src="photos/iepure.jpg">
 </div>
-<div class="container">
-    <div class="left-col">
+<div class="containerLocal clearfix">
+    <div class=" left-col">
         <h2>Consultatii</h2>
         <img src="photos/consultatii.jpg">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button name="details" type="button">
+        <button class="buttonLocal" name="details" type="button">
             Vezi Detalii
         </button>
     </div>
-    <div class="center-col">
+    <div class="center-col ">
         <h2>Chirurgie veterinara</h2>
         <img src="photos/chirurgie.jpg">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button name="details" type="button">
+        <button class="buttonLocal" name="details" type="button">
             Vezi Detalii
         </button>
     </div>
@@ -108,7 +117,7 @@
         <h2>Analize de laborator</h2>
         <img src="photos/analize.jpg">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button name="details" type="button">
+        <button class="buttonLocal" name="details" type="button">
             Vezi Detalii
         </button>
     </div>

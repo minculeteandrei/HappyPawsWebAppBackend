@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <style>
 @import "public/css/nav.css";
-body {
-  font-family: Arial;
-  margin: 0;
-}
+/*body {*/
+/*  font-family: Arial;*/
+/*  margin: 0;*/
+/*}*/
 
-* {
-  box-sizing: border-box;
-}
+/** {*/
+/*  box-sizing: border-box;*/
+/*}*/
 
-img {
-  vertical-align: middle;
-}
+/*img {*/
+/*  vertical-align: middle;*/
+/*}*/
 
 /* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: absolute;
+.containerLocal {
+  /*position: absolute;*/
 }
 
 /* Hide the images by default */
@@ -106,7 +109,7 @@ img {
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -133,7 +136,7 @@ header {
     <h1>Galerie</h1>
 </div>
 
-<div class="container">
+<div class="containerLocal">
   <div class="mySlides fade">
     <div class="numbertext">1 / 6</div>
     <img src="photos\dog1.jpg" style="width:100%">
