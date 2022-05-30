@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,8 +69,15 @@
                     <li>
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="/shop">Magazin</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/cart">Cart</a>
+                    </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <span sec:authorize="!isAuthenticated()">
+                <ul class="nav navbar-nav navbar-right float-start">
                     <li>
                         <a class="nav-link" href="/register">Creeaza cont nou</a>
                     </li>
@@ -78,6 +85,14 @@
                         <a class="nav-link" href="/login">Intra in cont</a>
                     </li>
                 </ul>
+            </span>
+                <span sec:authorize="isAuthenticated()">
+                <ul class="nav navbar-nav navbar-right float-start">
+                    <li>
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </span>
             </div>
         </nav>
     </div>

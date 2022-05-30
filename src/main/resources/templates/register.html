@@ -1,6 +1,7 @@
 <!doctype html>
 <div th:replace="fragments/nav :: top"></div>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -52,40 +53,42 @@
             <div class="col-lg-7 px-5 pt-5">
                 <h1>Bine ai venit!</h1>
                 <h4>Creeaza cont nou</h4>
-                <form>
+                <p th:if="${registerError}">Cannot create two users with the same email</p>
+                <p id="error"></p>
+                <form method="post" th:object="${user}" onsubmit="return validateRegister()" th:action="@{/register}">
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="text" placeholder="Nume" class="form-control my-2 p-4" required></input>
+                            <input type="text" th:field="*{nume}" placeholder="Nume" class="form-control my-2 p-4" required></input>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="text" placeholder="Prenume" class="form-control my-2 p-4" required></input>
+                            <input type="text" placeholder="Prenume" th:field="*{prenume}" class="form-control my-2 p-4" required></input>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="tel" placeholder="Telefon" class="form-control my-2 p-4" required></input>
+                            <input type="tel" placeholder="Telefon" th:field="*{telefon}" class="form-control my-2 p-4" required></input>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="email" placeholder="Email" class="form-control my-2 p-4" required></input>
+                            <input type="email" placeholder="Email" th:field="*{username}" class="form-control my-2 p-4" required></input>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="password" placeholder="Parola" class="form-control  my-2 p-4" required></input>
+                            <input type="password" placeholder="Parola" th:field="*{password}" class="form-control  my-2 p-4" id="pwd" required></input>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="password" placeholder="Repeta parola" class="form-control my-2 p-4" required></input>
+                            <input type="password" placeholder="Repeta parola" class="form-control my-2 p-4" id="pwdRep" required></input>
                         </div>
                     </div>
                     <div class="form-rowLocal">
                         <div class="col-lg-7">
-                            <button type="button" class="btn1 mt-3 mb-5">Creeaza cont</button>
+                            <button type="submit" class="btn1 mt-3 mb-5">Creeaza cont</button>
                         </div>
                     </div>
                     <p>Ai deja un cont? <a href="#">Intra in cont</a></p>
@@ -94,6 +97,16 @@
         </div>
     </div>
 </section>
+
+<script>
+    function validateRegister(){
+        if(document.getElementById("pwd").value !== document.getElementById("pwdRep").value){
+            document.getElementById("error").innerText = "Password and repeat password must match";
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

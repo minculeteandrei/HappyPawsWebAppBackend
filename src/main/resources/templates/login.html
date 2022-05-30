@@ -1,6 +1,7 @@
 <!doctype html>
 <div th:replace="fragments/nav :: top"></div>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -50,20 +51,21 @@
                 </div>
                 <div class="col-lg-7 px-5 pt-5">
                     <h4>Intra in cont</h4>
-                    <form>
+                    <p th:if="${loginError}">Wrong credentials</p>
+                    <form th:action="@{/login}" method="post">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email" class="form-control my-3 p-4" required></input>
+                                <input type="text" id="username" name="username" placeholder="Email" class="form-control my-3 p-4" required></input>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="Parola" class="form-control  my-3 p-4" required></input>
+                                <input type="password" id="password" name="password" placeholder="Parola" class="form-control  my-3 p-4" required></input>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn1 mt-3 mb-5">Conecteaza-te</button>
+                                <button type="submit" class="btn1 mt-3 mb-5">Conecteaza-te</button>
                             </div>
                         </div>
                         <a href="#">Am uitat parola</a>
