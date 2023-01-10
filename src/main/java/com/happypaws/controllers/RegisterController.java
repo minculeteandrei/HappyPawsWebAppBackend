@@ -1,5 +1,6 @@
 package com.happypaws.controllers;
 
+import com.happypaws.domain.Role;
 import com.happypaws.domain.User;
 import com.happypaws.services.UserService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,6 +35,7 @@ public class RegisterController {
             return "register";
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.getRoles().add(Role.ROLE_USER);
         userService.save(user);
         return "redirect:/login";
     }
