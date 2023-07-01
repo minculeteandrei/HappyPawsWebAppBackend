@@ -21,12 +21,22 @@ public class ProductServiceImp implements ProductService{
     }
 
     @Override
-    public void save(Product product) {
-        productRepository.save(product);
+    public Product save(Product product) {
+        return this.productRepository.save(product);
     }
 
     @Override
     public Product findProductById(Long id) {
         return productRepository.findProductById(id);
+    }
+
+    @Override
+    public Product findById(Long id) {
+        return this.productRepository.findProductById(id);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        this.productRepository.deleteById(id);
     }
 }

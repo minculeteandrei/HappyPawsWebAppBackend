@@ -8,8 +8,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Objects;
 
 @Service
 public class StorageServiceImp implements StorageService{
@@ -21,12 +24,23 @@ public class StorageServiceImp implements StorageService{
     }
 
     @Override
-    public void save(MultipartFile file, String filename) throws IOException {
-        String folder = "src/main/resources/static/photos/products/";
-        //Path path = Paths.get(folder);
-        try(FileOutputStream output = new FileOutputStream(folder + filename);){
-            output.write(file.getBytes());
+    public void save(MultipartFile file) throws IOException {
+        try{
+
+            Path rootLocation = Paths.get("")
+                    .toAbsolutePath()
+                    .getParent()
+                    .resolve(Paths.get("frontend/src/assets/images/products"));
+            Path destination = rootLocation.resolve(Paths.get(Objects.requireNonNull(file.getOriginalFilename())))
+                    .normalize().toAbsolutePath();
+            if(!destination.getParent().equals(rootLocation.toAbsolutePath())) {
+                throw new RuntimeException("Cannot store file outside of current directory");
+            }
+            try(InputStream inputStream = file.getInputStream()) {
+                Files.copy(inputStream,destination, StandardCopyOption.REPLACE_EXISTING);
+            }
         }catch (IOException e){
+            e.printStackTrace();
             throw new IOException("Could not save image file:"+  file.getOriginalFilename(), e);
         }
     }
@@ -34,11 +48,9 @@ public class StorageServiceImp implements StorageService{
     @Override
     public byte[] load(String filename) {
         var imgFile = new ClassPathResource(filename);
-        System.out.println(imgFile);
         try {
             return StreamUtils.copyToByteArray(imgFile.getInputStream());
         } catch (IOException e) {
-            System.out.println("error here");
             throw new RuntimeException(e);
         }
     }

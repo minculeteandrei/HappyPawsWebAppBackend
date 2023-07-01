@@ -16,41 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    PasswordEncoder passwordEncoder(){return new BCryptPasswordEncoder();}
-
-    @Autowired
-    private UserDetailsService userDetailsService;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/admin")
-                .hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/shop")
-                .hasRole("ADMIN")
-                .antMatchers(HttpMethod.GET, "/shop", "/cart")
-                .hasAnyRole("USER", "ADMIN")
-                .antMatchers(HttpMethod.POST, "/cart")
-                .hasAnyRole("USER", "ADMIN")
-                .antMatchers(HttpMethod.GET,"/", "gallery", "services", "shop", "cart", "/appointments", "/contact", "/resources/**")
-                .permitAll()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .failureUrl("/login-error")
-                .and()
-                .logout()
-                .logoutSuccessUrl("/");
         http.csrf().disable();
         http.cors();
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
     }
 }

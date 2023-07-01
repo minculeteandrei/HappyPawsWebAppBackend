@@ -1,6 +1,7 @@
 package com.happypaws.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,8 +26,10 @@ public class User implements UserDetails {
     private String nume;
     private String prenume;
     private Long telefon;
-    @ElementCollection(fetch = FetchType.EAGER)
-    private List<Role> roles = new ArrayList<>();
+    private String role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Appointment> appointments = new ArrayList<>();
 
     public User(String username, String password) {
         this.username = username;
@@ -36,8 +39,7 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        for(Role role : roles)
-            authorities.add(new SimpleGrantedAuthority(role.toString()));
+        authorities.add(new SimpleGrantedAuthority(role.toString()));
         return authorities;
     }
 
