@@ -13,9 +13,11 @@ public class OrderLineItem {
     @GeneratedValue
     private Long id;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "product_id")
     private Product product;
     private int quantity;
+
 
     public OrderLineItem(Product product, int quantity) {
         this.product = product;

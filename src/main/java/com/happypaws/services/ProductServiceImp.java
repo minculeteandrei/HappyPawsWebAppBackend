@@ -1,5 +1,6 @@
 package com.happypaws.services;
 
+import com.happypaws.domain.OrderLineItem;
 import com.happypaws.domain.Product;
 import com.happypaws.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,10 @@ public class ProductServiceImp implements ProductService{
 
     @Override
     public void deleteById(Long id) {
+        Product product = this.productRepository.findProductById(id);
+        for(OrderLineItem item : product.getOrderLineItems()) {
+            item.setProduct(null);
+        }
         this.productRepository.deleteById(id);
     }
 }

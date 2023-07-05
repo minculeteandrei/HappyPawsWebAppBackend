@@ -91,6 +91,10 @@ public class ProductRestController {
         } catch (NoSuchElementException e) {
             result.put("error", "User was not found in db");
             return new ResponseEntity<>(result.toString(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+        e.printStackTrace();
+        result.put("error", "Internal server error");
+        return new ResponseEntity<>(result.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
